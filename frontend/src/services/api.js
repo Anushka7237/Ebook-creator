@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -16,19 +16,15 @@ API.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 // Response interceptor to handle errors globally
 API.interceptors.response.use(
   (response) => response,
   (error) => {
-    // If unauthorized (e.g. token expired), log user out
     if (error.response && error.response.status === 401) {
       localStorage.removeItem("token");
-      // Optionally redirect or handle page reload
     }
     return Promise.reject(error);
   }
