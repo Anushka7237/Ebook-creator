@@ -1,3 +1,12 @@
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+
+const AuthContext = createContext();
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -40,11 +49,16 @@ export const AuthProvider = ({ children }) => {
 
     setUser(null);
     setIsAuthenticated(false);
+
     window.location.href = "/";
   };
 
   const updateUser = (updatedUserData) => {
-    const newUserData = { ...user, ...updatedUserData };
+    const newUserData = {
+      ...user,
+      ...updatedUserData,
+    };
+
     localStorage.setItem("user", JSON.stringify(newUserData));
     setUser(newUserData);
   };
@@ -59,5 +73,21 @@ export const AuthProvider = ({ children }) => {
     checkAuthStatus,
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+
+  return context;
+};
+
+export default AuthContext;

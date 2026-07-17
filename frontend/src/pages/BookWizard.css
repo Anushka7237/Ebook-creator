@@ -1,0 +1,318 @@
+.wizard-container {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.wizard-content {
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.wizard-card {
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Step Indicators */
+.wizard-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.wizard-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  width: 100px;
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.step-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.wizard-step.active .step-num {
+  background-color: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #ffffff;
+  box-shadow: 0 0 12px var(--accent-purple-glow);
+}
+
+.wizard-step.active .step-name {
+  color: #ffffff;
+}
+
+.wizard-step.completed .step-num {
+  background-color: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  color: #ffffff;
+}
+
+.wizard-step.completed .step-name {
+  color: var(--accent-emerald);
+}
+
+.steps-line {
+  position: absolute;
+  top: 18px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background-color: var(--border-color);
+  z-index: 0;
+}
+
+/* Wizard Forms */
+.wizard-title-desc {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wizard-title-desc h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.wizard-title-desc p {
+  color: var(--text-secondary);
+}
+
+/* AI Option Toggle */
+.option-toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.option-toggle-card {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-input);
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.option-toggle-card:hover {
+  border-color: var(--border-color-hover);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.option-toggle-card.selected {
+  border-color: var(--accent-purple);
+  background-color: rgba(139, 92, 246, 0.05);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+.option-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.option-toggle-card.selected .option-icon {
+  background-color: var(--accent-purple);
+  color: #ffffff;
+}
+
+.option-info-text h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.option-info-text p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.wizard-actions {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+  margin-top: 30px;
+}
+
+/* AI Loading State */
+.ai-loading-screen {
+  text-align: center;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ai-pulse-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-purple);
+  position: relative;
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 10px rgba(139, 92, 246, 0);
+  }
+}
+
+.ai-loading-screen h3 {
+  font-size: 1.3rem;
+}
+
+.ai-loading-screen p {
+  color: var(--text-secondary);
+  max-width: 400px;
+}
+
+/* Outline Editor */
+.outline-editor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 24px;
+}
+
+.outline-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.outline-item-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.outline-item-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.outline-item-title {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--border-color);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 2px 0;
+  outline: none;
+}
+
+.outline-item-title:focus {
+  border-bottom-color: var(--accent-purple);
+}
+
+.outline-item-desc {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  resize: none;
+  height: 50px;
+  outline: none;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.outline-item-desc:focus {
+  color: var(--text-primary);
+}
+
+.outline-add-btn {
+  width: 100%;
+  border: 1px dashed var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.outline-add-btn:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background-color: rgba(139, 92, 246, 0.02);
+}
