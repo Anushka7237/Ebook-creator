@@ -1,24 +1,24 @@
 export const API_PATHS={
     AUTH:{
-        REGISTER:"/api/auth/register",
-        LOGIN:"/api/auth/login",
-        GET_PROFILE:"/api/auth/profile",
-        UPDATE_PROFILE="/api/auth/profile",
+        REGISTER:"/auth/register",
+        LOGIN:"/auth/login",
+        GET_PROFILE:"/auth/profile",
+        UPDATE_PROFILE="/auth/profile",
     },
     BOOKS:{
-        CREATE_BOOK:"/api/books",
-        GET_BOOKS:"/api/books",
-        GET_BOOK_BY_ID:"/api/books",
-        UPDATE_BOOK:"/api/books",
-        DELETE_BOOK:"/api/books",
-        UPDATE_COVER:"/api/books/cover",
+        CREATE_BOOK:"/books",
+        GET_BOOKS:"/books",
+        GET_BOOK_BY_ID:"/books",
+        UPDATE_BOOK:"/books",
+        DELETE_BOOK:"/books",
+        UPDATE_COVER:"/books/cover",
     },
     AI:{
-        GENERATE_OUTLINE:"/api/ai/generate-outline",
-        GENERATE_CHAPTER_CONTENT:"/api/ai/generate-chapter-content",
+        GENERATE_OUTLINE:"/ai/generate-outline",
+        GENERATE_CHAPTER_CONTENT:"/ai/generate-chapter-content",
     },
     EXPORT:{
-        PDF:"/api/export",
-        DOC:"/api/export",
+        PDF:"/export",
+        DOC:"/export",
     },
 };
