@@ -89,9 +89,8 @@ AI-eBook-Creator
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone https://github.com/Anushka7237/Ebook-creator.git
 
-cd YOUR_REPOSITORY
 ```
 
 ---
@@ -189,34 +188,6 @@ npm run dev
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots here.
-
-```
-screenshots/
-
-login.png
-
-register.png
-
-dashboard.png
-
-create-book.png
-
-editor.png
-
-pdf-export.png
-```
-
-Example
-
-```markdown
-![Dashboard](screenshots/dashboard.png)
-```
-
----
-
 # 🔒 Authentication
 
 - JWT Authentication
@@ -272,24 +243,6 @@ The application has been tested for:
 
 ---
 
-# 👨‍💻 Author
+## 🌐 Connect here <p align="left">
 
-**Adarsh Singh Sengar**
-
-GitHub:
-https://github.com/YOUR_USERNAME
-
-LinkedIn:
-https://linkedin.com/in/YOUR_LINKEDIN
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## ⭐ Support
-
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+<a href="https://linkedin.com/in/anushka-gupta18" target="blank"> <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="anushka-gupta18" height="30" width="40" /> </a> </p>
