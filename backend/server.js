@@ -14,12 +14,15 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-type", "Authorization"],
-  }),
+    origin: [
+      "http://localhost:5173",
+      "https://ebook-creator-kappa.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
 );
-
 //Connect Database
 connectDB();
 
